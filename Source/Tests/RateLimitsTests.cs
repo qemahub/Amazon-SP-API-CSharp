@@ -15,7 +15,7 @@ namespace Tests
         [TestCase(0.1, 1, 3, 20000)]
         [TestCase(0.5, 1, 3, 4000)]
         [TestCase(1, 5, 10, 5000)]
-        public async Task WaitForPermittedRequest_WaitsExpectedLengthOfTime(decimal rate, int burst, int numberRequests, int expectedWaitMilliseconds)
+        public async Task NextRate_WaitsExpectedLengthOfTime(decimal rate, int burst, int numberRequests, int expectedWaitMilliseconds)
         {
             // Arrange
             var rateLimit = new RateLimits(rate, burst);
