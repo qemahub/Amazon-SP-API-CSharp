@@ -97,7 +97,10 @@ namespace FikaAmazonAPI.AmazonSpApiSDK.Models.OrdersV20260101
             {
                 int hashCode = 41;
                 if (this.PaymentExecutions != null)
-                    hashCode = hashCode * 59 + this.PaymentExecutions.GetHashCode();
+                {
+                    foreach (var paymentExecution in this.PaymentExecutions)
+                        hashCode = hashCode * 59 + (paymentExecution?.GetHashCode() ?? 0);
+                }
                 return hashCode;
             }
         }
